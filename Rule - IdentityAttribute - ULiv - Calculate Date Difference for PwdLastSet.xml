@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Rule PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Rule language="beanshell" name="ULiv - Calculate Date Difference for PwdLastSet" type="IdentityAttribute">
+  <Source><![CDATA[
+
+  /**
+ * Rule Name: ULiv - Calculate Date Difference for PwdLastSet 
+ * 
+ * Description:
+ * This rule calculates the difference in days between the current date and a future date 
+ * obtained by adding 90 days to the "pwdLastSet" attribute from Active Directory. The "pwdLastSet" 
+ * is retrieved in Win32 format, converted to Java time, and the days difference is used to return 
+ * reminders such as "14 days," "7 days,","3 days","2 days",1 day". If no predefined interval is matched, the rule 
+ * returns "null."
+ * 
+ * Inputs:
+ * - Account: The Account object from which the "pwdLastSet" attribute is retrieved.
+ * 
+ * Outputs:
+ * - Returns one of the following based on the days remaining:
+ *   - "14 days"
+ *   - "7 days"
+ *   - "3 days"
+ *   - "2 days"
+ *   - "1 day"
+ *   - "null" (if no match is found)
+ * 
+ * Logging:
+ * - Logs all key steps including date conversion, calculations, and decision points.
+ */
+
+  
+  import java.time.LocalDate;
+  import java.time.ZoneId;
+  import java.time.temporal.ChronoUnit;
+  import java.time.Instant;
+  import java.time.LocalDateTime;
+  import java.time.ZoneId;
+  import java.time.format.DateTimeFormatter;
+  import sailpoint.rule.Account;
+  
+  // Getting samAccount Name  
+  String samAccount = identity.getAttribute("adUsername");
+
+  if(samAccount  !=  null)
+  {
+    log.error("ULiv - Calculate Date Difference for PwdLastSet  for " + samAccount + " : Retrieving 'pwdLastSet' from Active Directory account.");
+
+    Account account = idn.getAccountByDisplayName("Active Directory",samAccount);
+
+    if(account != null){
+
+      log.error("ULiv - Calculate Date Difference for PwdLastSet in  Active Directory account :"+account+"found for: " + samAccount);
+
+      Map m= account.getAttributes();
+
+      // Retrieving the "pwdLastSet" attribute (expected in Win32 time format as a string)
+      String  pwdLastSet  =   m.get("pwdLastSet");
+
+      if(null != pwdLastSet ){
+
+        log.error("ULiv - Calculate Date Difference for PwdLastSet   'pwdLastSet' retrieved for " + samAccount + " : " + pwdLastSet);
+
+        // Converting the "pwdLastSet" string to a long value (Win32 time format)
+        log.error("ULiv - Calculate Date Difference for PwdLastSet Converting 'pwdLastSet' to long value");
+        Long lo = Long.parseLong(pwdLastSet);
+        log.error("'joining_date' as long: " + lo);
+
+
+        // Adjusting the Win32 timestamp to Unix time (subtracting 116444736000000000L)
+        log.error("ULiv - Calculate Date Difference for PwdLastSet Adjusting Win32 timestamp to Unix epoch time");
+        long javaTime = lo - 116444736000000000L;
+        log.error("ULiv - Calculate Date Difference for PwdLastSet Adjusted Unix time in 100-nanosecond intervals: " + javaTime);
+
+        // Dividing by 10000 to convert from 100-nanosecond intervals to milliseconds
+        javaTime = javaTime / 10000;
+        log.error("ULiv - Calculate Date Difference for PwdLastSet Unix time in milliseconds: " + javaTime);
+
+        // Converting milliseconds to an Instant object
+        Instant instant = Instant.ofEpochMilli(javaTime);
+        log.error("ULiv - Calculate Date Difference for PwdLastSet Converted Instant from milliseconds: " + instant);
+
+        // Converting the Instant to LocalDateTime based on the system's default time zone
+        LocalDateTime localDateTime = instant.atZone(ZoneId.systemDefault()).toLocalDateTime();
+        log.error("ULiv - Calculate Date Difference for PwdLastSet Converted LocalDateTime from Instant: " + localDateTime);
+
+        // Formatting the LocalDateTime to a string in the "yyyy/MM/dd" format
+        String formattedDate = localDateTime.format(DateTimeFormatter.ofPattern("yyyy/MM/dd"));
+        log.error("ULiv - Calculate Date Difference for PwdLastSet Formatted LocalDateTime (yyyy/MM/dd): " + formattedDate);
+
+        // Adding 90 days to the formatted LocalDateTime
+        log.error("Adding 90 days to the LocalDateTime");
+        LocalDateTime newDateTime = localDateTime.plusDays(90);
+        log.error("ULiv - Calculate Date Difference for PwdLastSet New date after adding 90 days: " + newDateTime);
+
+        // Formatting the new LocalDateTime after adding 90 days
+        String newFormattedDate = newDateTime.format(DateTimeFormatter.ofPattern("yyyy/MM/dd"));
+        log.error("ULiv - Calculate Date Difference for PwdLastSet Formatted new LocalDateTime after 90 days (yyyy/MM/dd): " + newFormattedDate);
+
+        // Getting the current system date and time
+        LocalDateTime currentDate = LocalDateTime.now();
+        log.error("ULiv - Calculate Date Difference for PwdLastSet Current system date and time: " + currentDate);
+
+        // Calculating the difference in days between the new date (after adding 90 days) and the current date
+        long daysDifference = ChronoUnit.DAYS.between(currentDate, newDateTime);
+        log.error("ULiv - Calculate Date Difference for PwdLastSet Difference in days between current date and new date: " + daysDifference);
+
+        // Switch statement to return a message based on the daysDifference value
+        log.error("ULiv - Calculate Date Difference for PwdLastSet: Checking if days difference matches 14, 7, 3, 2,1 day or other days");
+        switch (daysDifference) {
+          case 14:
+          log.error("ULiv - Calculate Date Difference for PwdLastSet: Match found: 14 days remaining");
+          return "14 days";  // Returns "14 days" if the difference is 14 days
+          case 7:
+          log.error("ULiv - Calculate Date Difference for PwdLastSet: Match found: 7 days remaining");
+          return "7 days";  // Returns "7 days" if the difference is 7 days
+          case 3:
+          log.error("ULiv - Calculate Date Difference for PwdLastSet: Match found: 3 days remaining");
+          return "3 days";  // Returns "3 days" if the difference is 3 days
+          case 2:
+          log.error("ULiv - Calculate Date Difference for PwdLastSet: Match found: 2 days remaining");
+          return "2 days";  // Returns "2 days" if the difference is 2 days
+          case 1:
+          log.error("ULiv - Calculate Date Difference for PwdLastSet: Match found: 1 day remaining");
+          return "1 day";  // Returns "1 day" if the difference is 1 day
+          default:
+          log.error("ULiv - Calculate Date Difference for PwdLastSet: No match found. Returning null");
+          return "null";  // Returns "null" if the difference is not within the predefined cases
+        }
+      }
+    }
+
+  }
+
+
+ ]]></Source>
+</Rule>
