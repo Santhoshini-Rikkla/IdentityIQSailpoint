@@ -1,0 +1,1632 @@
+1st case:
+Autoflag – false , Level – 1 , insiderAlert – PotentialInsider
+Before Approving level 1:-
+Get Access Request Status Response
+
+[
+    {
+        "name": "BR_Hanuma",
+        "type": "ROLE",
+        "id": "c7a0909df5654d8280e297787a2edcce",
+        "cancelledRequestDetails": null,
+        "errorMessages": null,
+        "state": "EXECUTING",
+        "approvalDetails": [
+            {
+                "scheme": "WORKFLOW",
+                "errorMessages": null,
+                "comment": null,
+                "approverComments": null,
+                "approvalId": null,
+                "removeDate": "2026-12-11T08:45Z",
+                "startDate": null,
+                "timeoutConfig": null,
+                "approvalCriteria": {
+                    "type": "SERIAL",
+                    "rejection": {
+                        "calculationType": "PERCENT",
+                        "value": 100
+                    },
+                    "approval": {
+                        "calculationType": "COUNT",
+                        "value": 1
+                    }
+                },
+                "forwarded": false,
+                "forwardHistory": null,
+                "originalOwner": {
+                    "type": "WORKFLOW",
+                    "id": "7d1f9296-3c49-4479-9b3e-e39a34d44c14",
+                    "name": "POC Adaptive Approval of Access Request"
+                },
+                "currentOwner": {
+                    "type": "GOVERNANCE_GROUP",
+                    "id": "038bfbab-5415-4bc1-bc01-1489cff2fbc2",
+                    "name": "WG-L1-BR-02849"
+                },
+                "currentOwners": [
+                    {
+                        "type": "GOVERNANCE_GROUP",
+                        "id": "038bfbab-5415-4bc1-bc01-1489cff2fbc2",
+                        "name": "WG-L1-BR-02849",
+                        "serialOrder": 1,
+                        "members": []
+                    }
+                ],
+                "modified": "2026-09-28T09:44:24.356465Z",
+                "status": "PENDING",
+                "reviewedBy": {
+                    "type": "WORKFLOW",
+                    "id": "7d1f9296-3c49-4479-9b3e-e39a34d44c14",
+                    "name": "POC Adaptive Approval of Access Request"
+                },
+                "reviewedByIdentities": []
+            }
+        ],
+        "approvalIds": [
+            "3e2b7bdd2c8549f59024515ae6126357",
+            "2b09c9bd8d0646f9bc0fb2aa132db716",
+            "b98fa2d6b29e409eb5921f19a27538ee",
+            "e4d0a48b1b4840f3a7bddcefe4c6a14c",
+            "6639e16bfa894c578812992dfb906493",
+            "5190bdab273242b9adf74f0423d2660f"
+        ],
+        "manualWorkItemDetails": null,
+        "accessRequestPhases": [
+            {
+                "started": "2026-09-28T09:42:59.168490488Z",
+                "finished": "2026-09-28T09:42:59.216770661Z",
+                "name": "SOD_PHASE",
+                "result": null,
+                "state": "COMPLETED",
+                "phaseReference": "sodViolationContext"
+            },
+            {
+                "started": "2026-09-28T09:42:59.365255887Z",
+                "finished": "2026-09-28T09:44:21.555021703Z",
+                "name": "PRE_APPROVAL_PHASE",
+                "result": null,
+                "state": "COMPLETED",
+                "phaseReference": "preApprovalTriggerDetails"
+            },
+            {
+                "started": "2026-09-28T09:44:22.072891013Z",
+                "finished": null,
+                "name": "APPROVAL_PHASE",
+                "result": null,
+                "state": "EXECUTING",
+                "phaseReference": "approvalDetails"
+            }
+        ],
+        "accountActivityItemId": "374687a8046a4d1c83d9b95fddff5638",
+        "requestType": "GRANT_ACCESS",
+        "modified": "2026-09-28T09:44:24.685Z",
+        "created": "2026-09-28T09:42:58.049Z",
+        "requester": {
+            "type": "IDENTITY",
+            "id": "69d56c7ef2d54ad88bd172ba0c74f1f6",
+            "name": "SailPoint Services"
+        },
+        "requestedFor": {
+            "type": "IDENTITY",
+            "id": "f41c94c2ae3b415fae09f2f23a67dca9",
+            "name": "1501_ITJS_AppID"
+        },
+        "requesterComment": {
+            "comment": "Requesting Role",
+            "author": {
+                "type": "IDENTITY",
+                "id": "69d56c7ef2d54ad88bd172ba0c74f1f6",
+                "name": "SailPoint Services"
+            },
+            "created": "2026-09-28T09:42:58.049Z"
+        },
+        "sodViolationContext": null,
+        "accessRequestPolicyCheckDetails": null,
+        "provisioningDetails": null,
+        "preApprovalTriggerDetails": {
+            "comment": "Update SNOW for Access Request Status",
+            "decision": "APPROVED",
+            "reviewer": "workflow.service",
+            "date": "2026-09-28T09:44:21.506Z"
+        },
+        "description": null,
+        "removeDate": "2026-12-11T08:45Z",
+        "startDate": "2026-09-30T20:40Z",
+        "cancelable": true,
+        "accessRequestId": "4320cb014e274dbcb4e5f3e4de4bb813",
+        "clientMetadata": {
+            "MARID": "234565789227",
+            "BusinessRoleKey": "BR_Hanuma",
+            "startDate": "2026-09-30T20:30:00Z"
+        },
+        "form": null,
+        "identityType": "HUMAN",
+        "accessRequestContext": {
+            "contextAttributes": [
+                {
+                    "attribute": "dimensiondataselection",
+                    "value": "DM_01",
+                    "derived": false
+                }
+            ]
+        },
+        "requestedAccounts": null,
+        "privilegeLevel": null,
+        "jitDetails": null,
+        "privileged": null
+    }
+]
+ 
+
+
+
+
+
+
+
+After Level 1 Approval
+Get Access Request Response:-
+
+[
+    {
+        "name": "BR_Hanuma",
+        "type": "ROLE",
+        "id": "c7a0909df5654d8280e297787a2edcce",
+        "cancelledRequestDetails": null,
+        "errorMessages": null,
+        "state": "EXECUTING",
+        "approvalDetails": [
+            {
+                "scheme": "WORKFLOW",
+                "errorMessages": null,
+                "comment": "Test",
+                "approverComments": [
+                    {
+                        "comment": "Test",
+                        "author": {
+                            "identityID": "69d56c7ef2d54ad88bd172ba0c74f1f6",
+                            "name": "SailPoint Services"
+                        },
+                        "createdDate": "2026-09-28T09:49:12.166130Z"
+                    },
+                    {
+                        "comment": "Requesting Role",
+                        "author": {
+                            "identityID": "69d56c7ef2d54ad88bd172ba0c74f1f6",
+                            "name": "SailPoint Services"
+                        },
+                        "createdDate": "2026-09-28T09:44:24.543187Z"
+                    }
+                ],
+                "approvalId": null,
+                "removeDate": "2026-12-11T08:45Z",
+                "startDate": null,
+                "timeoutConfig": null,
+                "approvalCriteria": {
+                    "type": "SERIAL",
+                    "rejection": {
+                        "calculationType": "PERCENT",
+                        "value": 100
+                    },
+                    "approval": {
+                        "calculationType": "COUNT",
+                        "value": 1
+                    }
+                },
+                "forwarded": true,
+                "forwardHistory": [
+                    {
+                        "oldApproverName": "Pdge, Epje",
+                        "newApproverName": "SailPoint Services",
+                        "comment": null,
+                        "modified": "2026-09-28T09:49:12.137890Z",
+                        "forwarderName": "SailPoint Services",
+                        "reassignmentType": "MANUAL_REASSIGNMENT"
+                    }
+                ],
+                "originalOwner": {
+                    "type": "WORKFLOW",
+                    "id": "7d1f9296-3c49-4479-9b3e-e39a34d44c14",
+                    "name": "POC Adaptive Approval of Access Request"
+                },
+                "currentOwner": {
+                    "type": "GOVERNANCE_GROUP",
+                    "id": "038bfbab-5415-4bc1-bc01-1489cff2fbc2",
+                    "name": "WG-L1-BR-02849"
+                },
+                "currentOwners": [
+                    {
+                        "type": "GOVERNANCE_GROUP",
+                        "id": "038bfbab-5415-4bc1-bc01-1489cff2fbc2",
+                        "name": "WG-L1-BR-02849",
+                        "serialOrder": 1,
+                        "members": []
+                    }
+                ],
+                "modified": "2026-09-28T09:49:12.174381Z",
+                "status": "APPROVED",
+                "reviewedBy": {
+                    "type": "IDENTITY",
+                    "id": "69d56c7ef2d54ad88bd172ba0c74f1f6",
+                    "name": "SailPoint Services"
+                },
+                "reviewedByIdentities": [
+                    {
+                        "type": "GOVERNANCE_GROUP",
+                        "id": "038bfbab-5415-4bc1-bc01-1489cff2fbc2",
+                        "name": "WG-L1-BR-02849",
+                        "decision": "APPROVED",
+                        "members": [
+                            {
+                                "type": "IDENTITY",
+                                "id": "69d56c7ef2d54ad88bd172ba0c74f1f6",
+                                "name": "SailPoint Services"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "scheme": "WORKFLOW",
+                "errorMessages": null,
+                "comment": null,
+                "approverComments": null,
+                "approvalId": null,
+                "removeDate": "2026-12-11T08:45Z",
+                "startDate": null,
+                "timeoutConfig": null,
+                "approvalCriteria": {
+                    "type": "SERIAL",
+                    "rejection": {
+                        "calculationType": "PERCENT",
+                        "value": 100
+                    },
+                    "approval": {
+                        "calculationType": "COUNT",
+                        "value": 1
+                    }
+                },
+                "forwarded": false,
+                "forwardHistory": null,
+                "originalOwner": {
+                    "type": "WORKFLOW",
+                    "id": "7d1f9296-3c49-4479-9b3e-e39a34d44c14",
+                    "name": "POC Adaptive Approval of Access Request"
+                },
+                "currentOwner": {
+                    "type": "GOVERNANCE_GROUP",
+                    "id": "5612c5d7-9480-428b-8279-01357bbb26e5",
+                    "name": "WG_OSE_Leads"
+                },
+                "currentOwners": [
+                    {
+                        "type": "GOVERNANCE_GROUP",
+                        "id": "5612c5d7-9480-428b-8279-01357bbb26e5",
+                        "name": "WG_OSE_Leads",
+                        "serialOrder": 1,
+                        "members": []
+                    }
+                ],
+                "modified": "2026-09-28T09:49:12.881849Z",
+                "status": "PENDING",
+                "reviewedBy": {
+                    "type": "WORKFLOW",
+                    "id": "7d1f9296-3c49-4479-9b3e-e39a34d44c14",
+                    "name": "POC Adaptive Approval of Access Request"
+                },
+                "reviewedByIdentities": []
+            }
+        ],
+        "approvalIds": [
+            "34400fba4ae047c3b61021efe758bec0",
+            "4932eb6839494c58806bd2806c3b9ed4",
+            "4444a92202cc4a49804f7666081f66c9",
+            "ed45b4634ed644f4bbf6fa758edde776",
+            "2692614e8d274a24907c48f7f9ea0dee",
+            "f2b9102f265a43db91cd847f65ed5ade",
+            "12564536ada64b1987457940e60b9b6c",
+            "e4db6a17368b4e72bce4d52ccad4a2a8",
+            "5fc868d8d82c4a73bbcda9c49fbde151",
+            "6a27c13a2d0c46e7a64b3e146135f39c",
+            "2039826f1f204cc1be95263b335fb34d",
+            "b142863e964c4276a2ecfecb6aa8c4c5",
+            "2267a689141e4303904612202f753fd2"
+        ],
+        "manualWorkItemDetails": null,
+        "accessRequestPhases": [
+            {
+                "started": "2026-09-28T09:42:59.168490488Z",
+                "finished": "2026-09-28T09:42:59.216770661Z",
+                "name": "SOD_PHASE",
+                "result": null,
+                "state": "COMPLETED",
+                "phaseReference": "sodViolationContext"
+            },
+            {
+                "started": "2026-09-28T09:42:59.365255887Z",
+                "finished": "2026-09-28T09:44:21.555021703Z",
+                "name": "PRE_APPROVAL_PHASE",
+                "result": null,
+                "state": "COMPLETED",
+                "phaseReference": "preApprovalTriggerDetails"
+            },
+            {
+                "started": "2026-09-28T09:44:22.072891013Z",
+                "finished": null,
+                "name": "APPROVAL_PHASE",
+                "result": null,
+                "state": "EXECUTING",
+                "phaseReference": "approvalDetails"
+            }
+        ],
+        "accountActivityItemId": "374687a8046a4d1c83d9b95fddff5638",
+        "requestType": "GRANT_ACCESS",
+        "modified": "2026-09-28T09:49:13.330Z",
+        "created": "2026-09-28T09:42:58.049Z",
+        "requester": {
+            "type": "IDENTITY",
+            "id": "69d56c7ef2d54ad88bd172ba0c74f1f6",
+            "name": "SailPoint Services"
+        },
+        "requestedFor": {
+            "type": "IDENTITY",
+            "id": "f41c94c2ae3b415fae09f2f23a67dca9",
+            "name": "1501_ITJS_AppID"
+        },
+        "requesterComment": {
+            "comment": "Requesting Role",
+            "author": {
+                "type": "IDENTITY",
+                "id": "69d56c7ef2d54ad88bd172ba0c74f1f6",
+                "name": "SailPoint Services"
+            },
+            "created": "2026-09-28T09:42:58.049Z"
+        },
+        "sodViolationContext": null,
+        "accessRequestPolicyCheckDetails": null,
+        "provisioningDetails": null,
+        "preApprovalTriggerDetails": {
+            "comment": "Update SNOW for Access Request Status",
+            "decision": "APPROVED",
+            "reviewer": "workflow.service",
+            "date": "2026-09-28T09:44:21.506Z"
+        },
+        "description": null,
+        "removeDate": "2026-12-11T08:45Z",
+        "startDate": "2026-09-30T20:40Z",
+        "cancelable": true,
+        "accessRequestId": "4320cb014e274dbcb4e5f3e4de4bb813",
+        "clientMetadata": {
+            "MARID": "234565789227",
+            "BusinessRoleKey": "BR_Hanuma",
+            "startDate": "2026-09-30T20:30:00Z"
+        },
+        "form": null,
+        "identityType": "HUMAN",
+        "accessRequestContext": {
+            "contextAttributes": [
+                {
+                    "attribute": "dimensiondataselection",
+                    "value": "DM_01",
+                    "derived": false
+                }
+            ]
+        },
+        "requestedAccounts": null,
+        "privilegeLevel": null,
+        "jitDetails": null,
+        "privileged": null
+    }
+]
+ 
+
+
+
+
+
+
+After two level Approval:-
+Get Access Request Status Response:-
+[
+    {
+        "name": "BR_Hanuma",
+        "type": "ROLE",
+        "id": "c7a0909df5654d8280e297787a2edcce",
+        "cancelledRequestDetails": null,
+        "errorMessages": null,
+        "state": "REQUEST_COMPLETED",
+        "approvalDetails": [
+            {
+                "scheme": "WORKFLOW",
+                "errorMessages": null,
+                "comment": "Test",
+                "approverComments": [
+                    {
+                        "comment": "Test",
+                        "author": {
+                            "identityID": "69d56c7ef2d54ad88bd172ba0c74f1f6",
+                            "name": "SailPoint Services"
+                        },
+                        "createdDate": "2026-09-28T09:49:12.166130Z"
+                    },
+                    {
+                        "comment": "Requesting Role",
+                        "author": {
+                            "identityID": "69d56c7ef2d54ad88bd172ba0c74f1f6",
+                            "name": "SailPoint Services"
+                        },
+                        "createdDate": "2026-09-28T09:44:24.543187Z"
+                    }
+                ],
+                "approvalId": null,
+                "removeDate": "2026-12-11T08:45Z",
+                "startDate": null,
+                "timeoutConfig": null,
+                "approvalCriteria": {
+                    "type": "SERIAL",
+                    "rejection": {
+                        "calculationType": "PERCENT",
+                        "value": 100
+                    },
+                    "approval": {
+                        "calculationType": "COUNT",
+                        "value": 1
+                    }
+                },
+                "forwarded": true,
+                "forwardHistory": [
+                    {
+                        "oldApproverName": "Pdge, Epje",
+                        "newApproverName": "SailPoint Services",
+                        "comment": null,
+                        "modified": "2026-09-28T09:49:12.137890Z",
+                        "forwarderName": "SailPoint Services",
+                        "reassignmentType": "MANUAL_REASSIGNMENT"
+                    }
+                ],
+                "originalOwner": {
+                    "type": "WORKFLOW",
+                    "id": "7d1f9296-3c49-4479-9b3e-e39a34d44c14",
+                    "name": "POC Adaptive Approval of Access Request"
+                },
+                "currentOwner": {
+                    "type": "GOVERNANCE_GROUP",
+                    "id": "038bfbab-5415-4bc1-bc01-1489cff2fbc2",
+                    "name": "WG-L1-BR-02849"
+                },
+                "currentOwners": [
+                    {
+                        "type": "GOVERNANCE_GROUP",
+                        "id": "038bfbab-5415-4bc1-bc01-1489cff2fbc2",
+                        "name": "WG-L1-BR-02849",
+                        "serialOrder": 1,
+                        "members": []
+                    }
+                ],
+                "modified": "2026-09-28T09:49:12.174381Z",
+                "status": "APPROVED",
+                "reviewedBy": {
+                    "type": "IDENTITY",
+                    "id": "69d56c7ef2d54ad88bd172ba0c74f1f6",
+                    "name": "SailPoint Services"
+                },
+                "reviewedByIdentities": [
+                    {
+                        "type": "GOVERNANCE_GROUP",
+                        "id": "038bfbab-5415-4bc1-bc01-1489cff2fbc2",
+                        "name": "WG-L1-BR-02849",
+                        "decision": "APPROVED",
+                        "members": [
+                            {
+                                "type": "IDENTITY",
+                                "id": "69d56c7ef2d54ad88bd172ba0c74f1f6",
+                                "name": "SailPoint Services"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "scheme": "WORKFLOW",
+                "errorMessages": null,
+                "comment": "test",
+                "approverComments": [
+                    {
+                        "comment": "test",
+                        "author": {
+                            "identityID": "69d56c7ef2d54ad88bd172ba0c74f1f6",
+                            "name": "SailPoint Services"
+                        },
+                        "createdDate": "2026-09-28T09:53:32.842661Z"
+                    },
+                    {
+                        "comment": "Requesting Role",
+                        "author": {
+                            "identityID": "69d56c7ef2d54ad88bd172ba0c74f1f6",
+                            "name": "SailPoint Services"
+                        },
+                        "createdDate": "2026-09-28T09:49:13.136894Z"
+                    }
+                ],
+                "approvalId": null,
+                "removeDate": "2026-12-11T08:45Z",
+                "startDate": null,
+                "timeoutConfig": null,
+                "approvalCriteria": {
+                    "type": "SERIAL",
+                    "rejection": {
+                        "calculationType": "PERCENT",
+                        "value": 100
+                    },
+                    "approval": {
+                        "calculationType": "COUNT",
+                        "value": 1
+                    }
+                },
+                "forwarded": true,
+                "forwardHistory": [
+                    {
+                        "oldApproverName": "Qhly, Etjy",
+                        "newApproverName": "SailPoint Services",
+                        "comment": null,
+                        "modified": "2026-09-28T09:53:32.818879Z",
+                        "forwarderName": "SailPoint Services",
+                        "reassignmentType": "MANUAL_REASSIGNMENT"
+                    }
+                ],
+                "originalOwner": {
+                    "type": "WORKFLOW",
+                    "id": "7d1f9296-3c49-4479-9b3e-e39a34d44c14",
+                    "name": "POC Adaptive Approval of Access Request"
+                },
+                "currentOwner": {
+                    "type": "GOVERNANCE_GROUP",
+                    "id": "5612c5d7-9480-428b-8279-01357bbb26e5",
+                    "name": "WG_OSE_Leads"
+                },
+                "currentOwners": [
+                    {
+                        "type": "GOVERNANCE_GROUP",
+                        "id": "5612c5d7-9480-428b-8279-01357bbb26e5",
+                        "name": "WG_OSE_Leads",
+                        "serialOrder": 1,
+                        "members": []
+                    }
+                ],
+                "modified": "2026-09-28T09:53:32.851563Z",
+                "status": "APPROVED",
+                "reviewedBy": {
+                    "type": "IDENTITY",
+                    "id": "69d56c7ef2d54ad88bd172ba0c74f1f6",
+                    "name": "SailPoint Services"
+                },
+                "reviewedByIdentities": [
+                    {
+                        "type": "GOVERNANCE_GROUP",
+                        "id": "5612c5d7-9480-428b-8279-01357bbb26e5",
+                        "name": "WG_OSE_Leads",
+                        "decision": "APPROVED",
+                        "members": [
+                            {
+                                "type": "IDENTITY",
+                                "id": "69d56c7ef2d54ad88bd172ba0c74f1f6",
+                                "name": "SailPoint Services"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "approvalIds": [],
+        "manualWorkItemDetails": null,
+        "accessRequestPhases": [
+            {
+                "started": "2026-09-28T09:42:59.168490488Z",
+                "finished": "2026-09-28T09:42:59.216770661Z",
+                "name": "SOD_PHASE",
+                "result": null,
+                "state": "COMPLETED",
+                "phaseReference": "sodViolationContext"
+            },
+            {
+                "started": "2026-09-28T09:42:59.365255887Z",
+                "finished": "2026-09-28T09:44:21.555021703Z",
+                "name": "PRE_APPROVAL_PHASE",
+                "result": null,
+                "state": "COMPLETED",
+                "phaseReference": "preApprovalTriggerDetails"
+            },
+            {
+                "started": "2026-09-28T09:44:22.072891013Z",
+                "finished": "2026-09-28T09:53:36.133961001Z",
+                "name": "APPROVAL_PHASE",
+                "result": null,
+                "state": "COMPLETED",
+                "phaseReference": "approvalDetails"
+            },
+            {
+                "started": "2026-09-28T09:53:36.250807448Z",
+                "finished": "2026-09-28T09:53:38.263998702Z",
+                "name": "PROVISIONING_PHASE",
+                "result": "SUCCESSFUL",
+                "state": "COMPLETED",
+                "phaseReference": null
+            }
+        ],
+        "accountActivityItemId": "374687a8046a4d1c83d9b95fddff5638",
+        "requestType": "GRANT_ACCESS",
+        "modified": "2026-09-28T09:53:39.482Z",
+        "created": "2026-09-28T09:42:58.049Z",
+        "requester": {
+            "type": "IDENTITY",
+            "id": "69d56c7ef2d54ad88bd172ba0c74f1f6",
+            "name": "SailPoint Services"
+        },
+        "requestedFor": {
+            "type": "IDENTITY",
+            "id": "f41c94c2ae3b415fae09f2f23a67dca9",
+            "name": "1501_ITJS_AppID"
+        },
+        "requesterComment": {
+            "comment": "Requesting Role",
+            "author": {
+                "type": "IDENTITY",
+                "id": "69d56c7ef2d54ad88bd172ba0c74f1f6",
+                "name": "SailPoint Services"
+            },
+            "created": "2026-09-28T09:42:58.049Z"
+        },
+        "sodViolationContext": null,
+        "accessRequestPolicyCheckDetails": null,
+        "provisioningDetails": null,
+        "preApprovalTriggerDetails": {
+            "comment": "Update SNOW for Access Request Status",
+            "decision": "APPROVED",
+            "reviewer": "workflow.service",
+            "date": "2026-09-28T09:44:21.506Z"
+        },
+        "description": null,
+        "removeDate": "2026-12-11T08:45Z",
+        "startDate": "2026-09-30T20:40Z",
+        "cancelable": false,
+        "accessRequestId": "4320cb014e274dbcb4e5f3e4de4bb813",
+        "clientMetadata": {
+            "MARID": "234565789227",
+            "BusinessRoleKey": "BR_Hanuma",
+            "startDate": "2026-09-30T20:30:00Z"
+        },
+        "form": null,
+        "identityType": "HUMAN",
+        "accessRequestContext": {
+            "contextAttributes": [
+                {
+                    "attribute": "dimensiondataselection",
+                    "value": "DM_01",
+                    "derived": false
+                }
+            ]
+        },
+        "requestedAccounts": null,
+        "privilegeLevel": null,
+        "jitDetails": null,
+        "privileged": null
+    }
+]
+
+
+2nd case:
+Autoflag – false , Level – 1 , insiderAlert – NotInsider
+
+Before level 1 Approval
+
+[
+    {
+        "name": "BR_Hanuma",
+        "type": "ROLE",
+        "id": "c7a0909df5654d8280e297787a2edcce",
+        "cancelledRequestDetails": null,
+        "errorMessages": null,
+        "state": "EXECUTING",
+        "approvalDetails": [
+            {
+                "scheme": "WORKFLOW",
+                "errorMessages": null,
+                "comment": null,
+                "approverComments": null,
+                "approvalId": null,
+                "removeDate": null,
+                "startDate": null,
+                "timeoutConfig": null,
+                "approvalCriteria": null,
+                "forwarded": false,
+                "forwardHistory": null,
+                "originalOwner": {
+                    "type": "WORKFLOW",
+                    "id": "7d1f9296-3c49-4479-9b3e-e39a34d44c14",
+                    "name": "POC Adaptive Approval of Access Request"
+                },
+                "currentOwner": null,
+                "currentOwners": null,
+                "modified": null,
+                "status": null,
+                "reviewedBy": null,
+                "reviewedByIdentities": null
+            }
+        ],
+        "approvalIds": [],
+        "manualWorkItemDetails": null,
+        "accessRequestPhases": [
+            {
+                "started": "2026-09-28T10:09:59.023637143Z",
+                "finished": "2026-09-28T10:09:59.081497368Z",
+                "name": "SOD_PHASE",
+                "result": null,
+                "state": "COMPLETED",
+                "phaseReference": "sodViolationContext"
+            },
+            {
+                "started": "2026-09-28T10:09:59.175833178Z",
+                "finished": null,
+                "name": "PRE_APPROVAL_PHASE",
+                "result": null,
+                "state": "EXECUTING",
+                "phaseReference": "preApprovalTriggerDetails"
+            }
+        ],
+        "accountActivityItemId": "23bf336c270345499190f18d9619e4ae",
+        "requestType": "GRANT_ACCESS",
+        "modified": "2026-09-28T10:09:59.229Z",
+        "created": "2026-09-28T10:09:58.651Z",
+        "requester": {
+            "type": "IDENTITY",
+            "id": "69d56c7ef2d54ad88bd172ba0c74f1f6",
+            "name": "SailPoint Services"
+        },
+        "requestedFor": {
+            "type": "IDENTITY",
+            "id": "c951bbacf6014e7b843cd65cf0ae4932",
+            "name": "1735_p104user"
+        },
+        "requesterComment": {
+            "comment": "Requesting Role",
+            "author": {
+                "type": "IDENTITY",
+                "id": "69d56c7ef2d54ad88bd172ba0c74f1f6",
+                "name": "SailPoint Services"
+            },
+            "created": "2026-09-28T10:09:58.651Z"
+        },
+        "sodViolationContext": null,
+        "accessRequestPolicyCheckDetails": null,
+        "provisioningDetails": null,
+        "preApprovalTriggerDetails": null,
+        "description": null,
+        "removeDate": "2026-12-11T08:45Z",
+        "startDate": "2026-09-30T20:40Z",
+        "cancelable": true,
+        "accessRequestId": "38cbf4a6e39e482690ef637c5208dd2d",
+        "clientMetadata": {
+            "MARID": "234565789227",
+            "BusinessRoleKey": "BR_Hanuma",
+            "startDate": "2026-09-30T20:30:00Z"
+        },
+        "form": null,
+        "identityType": "HUMAN",
+        "accessRequestContext": {
+            "contextAttributes": [
+                {
+                    "attribute": "dimensiondataselection",
+                    "value": "DM_01",
+                    "derived": false
+                }
+            ]
+        },
+        "requestedAccounts": null,
+        "privilegeLevel": null,
+        "jitDetails": null,
+        "privileged": null
+    }
+]
+A 
+
+After Level 1 Approval :-
+
+[
+    {
+        "name": "BR_Hanuma",
+        "type": "ROLE",
+        "id": "c7a0909df5654d8280e297787a2edcce",
+        "cancelledRequestDetails": null,
+        "errorMessages": null,
+        "state": "REQUEST_COMPLETED",
+        "approvalDetails": [
+            {
+                "scheme": "WORKFLOW",
+                "errorMessages": null,
+                "comment": "test",
+                "approverComments": [
+                    {
+                        "comment": "test",
+                        "author": {
+                            "identityID": "69d56c7ef2d54ad88bd172ba0c74f1f6",
+                            "name": "SailPoint Services"
+                        },
+                        "createdDate": "2026-09-28T10:12:59.927178Z"
+                    },
+                    {
+                        "comment": "Requesting Role",
+                        "author": {
+                            "identityID": "69d56c7ef2d54ad88bd172ba0c74f1f6",
+                            "name": "SailPoint Services"
+                        },
+                        "createdDate": "2026-09-28T10:11:32.925110Z"
+                    }
+                ],
+                "approvalId": null,
+                "removeDate": "2026-12-11T08:45Z",
+                "startDate": null,
+                "timeoutConfig": null,
+                "approvalCriteria": {
+                    "type": "SERIAL",
+                    "rejection": {
+                        "calculationType": "PERCENT",
+                        "value": 100
+                    },
+                    "approval": {
+                        "calculationType": "COUNT",
+                        "value": 1
+                    }
+                },
+                "forwarded": true,
+                "forwardHistory": [
+                    {
+                        "oldApproverName": "Mmhb, Eibb",
+                        "newApproverName": "SailPoint Services",
+                        "comment": null,
+                        "modified": "2026-09-28T10:12:59.899069Z",
+                        "forwarderName": "SailPoint Services",
+                        "reassignmentType": "MANUAL_REASSIGNMENT"
+                    }
+                ],
+                "originalOwner": {
+                    "type": "WORKFLOW",
+                    "id": "7d1f9296-3c49-4479-9b3e-e39a34d44c14",
+                    "name": "POC Adaptive Approval of Access Request"
+                },
+                "currentOwner": {
+                    "type": "GOVERNANCE_GROUP",
+                    "id": "038bfbab-5415-4bc1-bc01-1489cff2fbc2",
+                    "name": "WG-L1-BR-02849"
+                },
+                "currentOwners": [
+                    {
+                        "type": "GOVERNANCE_GROUP",
+                        "id": "038bfbab-5415-4bc1-bc01-1489cff2fbc2",
+                        "name": "WG-L1-BR-02849",
+                        "serialOrder": 1,
+                        "members": []
+                    }
+                ],
+                "modified": "2026-09-28T10:12:59.939227Z",
+                "status": "APPROVED",
+                "reviewedBy": {
+                    "type": "IDENTITY",
+                    "id": "69d56c7ef2d54ad88bd172ba0c74f1f6",
+                    "name": "SailPoint Services"
+                },
+                "reviewedByIdentities": [
+                    {
+                        "type": "GOVERNANCE_GROUP",
+                        "id": "038bfbab-5415-4bc1-bc01-1489cff2fbc2",
+                        "name": "WG-L1-BR-02849",
+                        "decision": "APPROVED",
+                        "members": [
+                            {
+                                "type": "IDENTITY",
+                                "id": "69d56c7ef2d54ad88bd172ba0c74f1f6",
+                                "name": "SailPoint Services"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "approvalIds": [],
+        "manualWorkItemDetails": null,
+        "accessRequestPhases": [
+            {
+                "started": "2026-09-28T10:09:59.023637143Z",
+                "finished": "2026-09-28T10:09:59.081497368Z",
+                "name": "SOD_PHASE",
+                "result": null,
+                "state": "COMPLETED",
+                "phaseReference": "sodViolationContext"
+            },
+            {
+                "started": "2026-09-28T10:09:59.175833178Z",
+                "finished": "2026-09-28T10:11:29.659179800Z",
+                "name": "PRE_APPROVAL_PHASE",
+                "result": null,
+                "state": "COMPLETED",
+                "phaseReference": "preApprovalTriggerDetails"
+            },
+            {
+                "started": "2026-09-28T10:11:30.011249268Z",
+                "finished": "2026-09-28T10:13:02.916079092Z",
+                "name": "APPROVAL_PHASE",
+                "result": null,
+                "state": "COMPLETED",
+                "phaseReference": "approvalDetails"
+            },
+            {
+                "started": "2026-09-28T10:13:03.084650571Z",
+                "finished": "2026-09-28T10:13:05.357528725Z",
+                "name": "PROVISIONING_PHASE",
+                "result": "SUCCESSFUL",
+                "state": "COMPLETED",
+                "phaseReference": null
+            }
+        ],
+        "accountActivityItemId": "23bf336c270345499190f18d9619e4ae",
+        "requestType": "GRANT_ACCESS",
+        "modified": "2026-09-28T10:13:07.631Z",
+        "created": "2026-09-28T10:09:58.651Z",
+        "requester": {
+            "type": "IDENTITY",
+            "id": "69d56c7ef2d54ad88bd172ba0c74f1f6",
+            "name": "SailPoint Services"
+        },
+        "requestedFor": {
+            "type": "IDENTITY",
+            "id": "c951bbacf6014e7b843cd65cf0ae4932",
+            "name": "1735_p104user"
+        },
+        "requesterComment": {
+            "comment": "Requesting Role",
+            "author": {
+                "type": "IDENTITY",
+                "id": "69d56c7ef2d54ad88bd172ba0c74f1f6",
+                "name": "SailPoint Services"
+            },
+            "created": "2026-09-28T10:09:58.651Z"
+        },
+        "sodViolationContext": null,
+        "accessRequestPolicyCheckDetails": null,
+        "provisioningDetails": null,
+        "preApprovalTriggerDetails": {
+            "comment": "Update SNOW for Access Request Status",
+            "decision": "APPROVED",
+            "reviewer": "workflow.service",
+            "date": "2026-09-28T10:11:29.569Z"
+        },
+        "description": null,
+        "removeDate": "2026-12-11T08:45Z",
+        "startDate": "2026-09-30T20:40Z",
+        "cancelable": false,
+        "accessRequestId": "38cbf4a6e39e482690ef637c5208dd2d",
+        "clientMetadata": {
+            "MARID": "234565789227",
+            "BusinessRoleKey": "BR_Hanuma",
+            "startDate": "2026-09-30T20:30:00Z"
+        },
+        "form": null,
+        "identityType": "HUMAN",
+        "accessRequestContext": {
+            "contextAttributes": [
+                {
+                    "attribute": "dimensiondataselection",
+                    "value": "DM_01",
+                    "derived": false
+                }
+            ]
+        },
+        "requestedAccounts": null,
+        "privilegeLevel": null,
+        "jitDetails": null,
+        "privileged": null
+    }
+]
+
+3rd case:
+Autoflag – false , Level – 1 , insiderAlert – PotentialInsider with wait = 5min
+Before level 1 Approval 
+
+[
+    {
+        "name": "BR_Hanuma",
+        "type": "ROLE",
+        "id": "c7a0909df5654d8280e297787a2edcce",
+        "cancelledRequestDetails": null,
+        "errorMessages": null,
+        "state": "EXECUTING",
+        "approvalDetails": [
+            {
+                "scheme": "WORKFLOW",
+                "errorMessages": null,
+                "comment": null,
+                "approverComments": null,
+                "approvalId": null,
+                "removeDate": "2026-12-11T08:45Z",
+                "startDate": null,
+                "timeoutConfig": null,
+                "approvalCriteria": {
+                    "type": "SERIAL",
+                    "rejection": {
+                        "calculationType": "PERCENT",
+                        "value": 100
+                    },
+                    "approval": {
+                        "calculationType": "COUNT",
+                        "value": 1
+                    }
+                },
+                "forwarded": false,
+                "forwardHistory": null,
+                "originalOwner": {
+                    "type": "WORKFLOW",
+                    "id": "7d1f9296-3c49-4479-9b3e-e39a34d44c14",
+                    "name": "POC Adaptive Approval of Access Request"
+                },
+                "currentOwner": {
+                    "type": "GOVERNANCE_GROUP",
+                    "id": "038bfbab-5415-4bc1-bc01-1489cff2fbc2",
+                    "name": "WG-L1-BR-02849"
+                },
+                "currentOwners": [
+                    {
+                        "type": "GOVERNANCE_GROUP",
+                        "id": "038bfbab-5415-4bc1-bc01-1489cff2fbc2",
+                        "name": "WG-L1-BR-02849",
+                        "serialOrder": 1,
+                        "members": []
+                    }
+                ],
+                "modified": "2026-09-28T10:18:36.129383Z",
+                "status": "PENDING",
+                "reviewedBy": {
+                    "type": "WORKFLOW",
+                    "id": "7d1f9296-3c49-4479-9b3e-e39a34d44c14",
+                    "name": "POC Adaptive Approval of Access Request"
+                },
+                "reviewedByIdentities": []
+            }
+        ],
+        "approvalIds": [
+            "712869c73a744ba5aadd0de7e9ec7c48",
+            "4ccaefe8f1b74647839082a7cc442328",
+            "c97ef78a501d4db9bb025e3a5774f65a",
+            "971acae8387f4012a8c9975defc853e3",
+            "b4be9c3b3ebb4eca8639aa2368cc53e0",
+            "0ea63e4ba35645e2a87299b06d29523a"
+        ],
+        "manualWorkItemDetails": null,
+        "accessRequestPhases": [
+            {
+                "started": "2026-09-28T10:16:51.853437249Z",
+                "finished": "2026-09-28T10:16:51.932502201Z",
+                "name": "SOD_PHASE",
+                "result": null,
+                "state": "COMPLETED",
+                "phaseReference": "sodViolationContext"
+            },
+            {
+                "started": "2026-09-28T10:16:52.031544556Z",
+                "finished": "2026-09-28T10:18:33.242885443Z",
+                "name": "PRE_APPROVAL_PHASE",
+                "result": null,
+                "state": "COMPLETED",
+                "phaseReference": "preApprovalTriggerDetails"
+            },
+            {
+                "started": "2026-09-28T10:18:33.366660780Z",
+                "finished": null,
+                "name": "APPROVAL_PHASE",
+                "result": null,
+                "state": "EXECUTING",
+                "phaseReference": "approvalDetails"
+            }
+        ],
+        "accountActivityItemId": "232aca14fcf24a828f61193c0fcc2eed",
+        "requestType": "GRANT_ACCESS",
+        "modified": "2026-09-28T10:18:36.483Z",
+        "created": "2026-09-28T10:16:51.494Z",
+        "requester": {
+            "type": "IDENTITY",
+            "id": "69d56c7ef2d54ad88bd172ba0c74f1f6",
+            "name": "SailPoint Services"
+        },
+        "requestedFor": {
+            "type": "IDENTITY",
+            "id": "4e64f3703667471ab90aa42c3564db86",
+            "name": "1964_MySched_Mashery"
+        },
+        "requesterComment": {
+            "comment": "Requesting Role",
+            "author": {
+                "type": "IDENTITY",
+                "id": "69d56c7ef2d54ad88bd172ba0c74f1f6",
+                "name": "SailPoint Services"
+            },
+            "created": "2026-09-28T10:16:51.494Z"
+        },
+        "sodViolationContext": null,
+        "accessRequestPolicyCheckDetails": null,
+        "provisioningDetails": null,
+        "preApprovalTriggerDetails": {
+            "comment": "Update SNOW for Access Request Status",
+            "decision": "APPROVED",
+            "reviewer": "workflow.service",
+            "date": "2026-09-28T10:18:33.184Z"
+        },
+        "description": null,
+        "removeDate": "2026-12-11T08:45Z",
+        "startDate": "2026-09-30T20:40Z",
+        "cancelable": true,
+        "accessRequestId": "c7969a1ad8654fb3911debe719960a4e",
+        "clientMetadata": {
+            "MARID": "234565789227",
+            "BusinessRoleKey": "BR_Hanuma",
+            "startDate": "2026-09-30T20:30:00Z"
+        },
+        "form": null,
+        "identityType": "HUMAN",
+        "accessRequestContext": {
+            "contextAttributes": [
+                {
+                    "attribute": "dimensiondataselection",
+                    "value": "DM_01",
+                    "derived": false
+                }
+            ]
+        },
+        "requestedAccounts": null,
+        "privilegeLevel": null,
+        "jitDetails": null,
+        "privileged": null
+    }
+]
+ 
+After level 1 approval:- Before wait
+
+[
+    {
+        "name": "BR_Hanuma",
+        "type": "ROLE",
+        "id": "c7a0909df5654d8280e297787a2edcce",
+        "cancelledRequestDetails": null,
+        "errorMessages": null,
+        "state": "EXECUTING",
+        "approvalDetails": [
+            {
+                "scheme": "WORKFLOW",
+                "errorMessages": null,
+                "comment": "test",
+                "approverComments": [
+                    {
+                        "comment": "test",
+                        "author": {
+                            "identityID": "69d56c7ef2d54ad88bd172ba0c74f1f6",
+                            "name": "SailPoint Services"
+                        },
+                        "createdDate": "2026-09-28T10:37:02.011343Z"
+                    },
+                    {
+                        "comment": "Requesting Role",
+                        "author": {
+                            "identityID": "69d56c7ef2d54ad88bd172ba0c74f1f6",
+                            "name": "SailPoint Services"
+                        },
+                        "createdDate": "2026-09-28T10:36:33.155282Z"
+                    }
+                ],
+                "approvalId": null,
+                "removeDate": "2026-12-11T08:45Z",
+                "startDate": null,
+                "timeoutConfig": null,
+                "approvalCriteria": {
+                    "type": "SERIAL",
+                    "rejection": {
+                        "calculationType": "PERCENT",
+                        "value": 100
+                    },
+                    "approval": {
+                        "calculationType": "COUNT",
+                        "value": 1
+                    }
+                },
+                "forwarded": true,
+                "forwardHistory": [
+                    {
+                        "oldApproverName": "Nilakantha Padhy",
+                        "newApproverName": "SailPoint Services",
+                        "comment": null,
+                        "modified": "2026-09-28T10:37:01.979211Z",
+                        "forwarderName": "SailPoint Services",
+                        "reassignmentType": "MANUAL_REASSIGNMENT"
+                    }
+                ],
+                "originalOwner": {
+                    "type": "WORKFLOW",
+                    "id": "7d1f9296-3c49-4479-9b3e-e39a34d44c14",
+                    "name": "POC Adaptive Approval of Access Request"
+                },
+                "currentOwner": {
+                    "type": "GOVERNANCE_GROUP",
+                    "id": "038bfbab-5415-4bc1-bc01-1489cff2fbc2",
+                    "name": "WG-L1-BR-02849"
+                },
+                "currentOwners": [
+                    {
+                        "type": "GOVERNANCE_GROUP",
+                        "id": "038bfbab-5415-4bc1-bc01-1489cff2fbc2",
+                        "name": "WG-L1-BR-02849",
+                        "serialOrder": 1,
+                        "members": []
+                    }
+                ],
+                "modified": "2026-09-28T10:37:02.024292Z",
+                "status": "APPROVED",
+                "reviewedBy": {
+                    "type": "IDENTITY",
+                    "id": "69d56c7ef2d54ad88bd172ba0c74f1f6",
+                    "name": "SailPoint Services"
+                },
+                "reviewedByIdentities": [
+                    {
+                        "type": "GOVERNANCE_GROUP",
+                        "id": "038bfbab-5415-4bc1-bc01-1489cff2fbc2",
+                        "name": "WG-L1-BR-02849",
+                        "decision": "APPROVED",
+                        "members": [
+                            {
+                                "type": "IDENTITY",
+                                "id": "69d56c7ef2d54ad88bd172ba0c74f1f6",
+                                "name": "SailPoint Services"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "approvalIds": [],
+        "manualWorkItemDetails": null,
+        "accessRequestPhases": [
+            {
+                "started": "2026-09-28T10:34:51.066531228Z",
+                "finished": "2026-09-28T10:34:51.118535705Z",
+                "name": "SOD_PHASE",
+                "result": null,
+                "state": "COMPLETED",
+                "phaseReference": "sodViolationContext"
+            },
+            {
+                "started": "2026-09-28T10:34:51.189976673Z",
+                "finished": "2026-09-28T10:36:29.841674039Z",
+                "name": "PRE_APPROVAL_PHASE",
+                "result": null,
+                "state": "COMPLETED",
+                "phaseReference": "preApprovalTriggerDetails"
+            },
+            {
+                "started": "2026-09-28T10:36:30.198000541Z",
+                "finished": null,
+                "name": "APPROVAL_PHASE",
+                "result": null,
+                "state": "EXECUTING",
+                "phaseReference": "approvalDetails"
+            }
+        ],
+        "accountActivityItemId": "f734e39293ad4b83aa20082925b4018f",
+        "requestType": "GRANT_ACCESS",
+        "modified": "2026-09-28T10:37:02.198Z",
+        "created": "2026-09-28T10:34:50.768Z",
+        "requester": {
+            "type": "IDENTITY",
+            "id": "69d56c7ef2d54ad88bd172ba0c74f1f6",
+            "name": "SailPoint Services"
+        },
+        "requestedFor": {
+            "type": "IDENTITY",
+            "id": "80db01bbc362477098a92bf418ec6b14",
+            "name": "20000213163213"
+        },
+        "requesterComment": {
+            "comment": "Requesting Role",
+            "author": {
+                "type": "IDENTITY",
+                "id": "69d56c7ef2d54ad88bd172ba0c74f1f6",
+                "name": "SailPoint Services"
+            },
+            "created": "2026-09-28T10:34:50.768Z"
+        },
+        "sodViolationContext": null,
+        "accessRequestPolicyCheckDetails": null,
+        "provisioningDetails": null,
+        "preApprovalTriggerDetails": {
+            "comment": "Update SNOW for Access Request Status",
+            "decision": "APPROVED",
+            "reviewer": "workflow.service",
+            "date": "2026-09-28T10:36:29.751Z"
+        },
+        "description": null,
+        "removeDate": "2026-12-11T08:45Z",
+        "startDate": "2026-09-30T20:40Z",
+        "cancelable": true,
+        "accessRequestId": "683b3d79e4284bfdb61e9c450b7de247",
+        "clientMetadata": {
+            "MARID": "234565789227",
+            "BusinessRoleKey": "BR_Hanuma",
+            "startDate": "2026-09-30T20:30:00Z"
+        },
+        "form": null,
+        "identityType": "HUMAN",
+        "accessRequestContext": {
+            "contextAttributes": [
+                {
+                    "attribute": "dimensiondataselection",
+                    "value": "DM_01",
+                    "derived": false
+                }
+            ]
+        },
+        "requestedAccounts": null,
+        "privilegeLevel": null,
+        "jitDetails": null,
+        "privileged": null
+    }
+]
+
+After level 1 approval:- After wait:-
+[
+    {
+        "name": "BR_Hanuma",
+        "type": "ROLE",
+        "id": "c7a0909df5654d8280e297787a2edcce",
+        "cancelledRequestDetails": null,
+        "errorMessages": null,
+        "state": "EXECUTING",
+        "approvalDetails": [
+            {
+                "scheme": "WORKFLOW",
+                "errorMessages": null,
+                "comment": "test",
+                "approverComments": [
+                    {
+                        "comment": "test",
+                        "author": {
+                            "identityID": "69d56c7ef2d54ad88bd172ba0c74f1f6",
+                            "name": "SailPoint Services"
+                        },
+                        "createdDate": "2026-09-28T10:37:02.011343Z"
+                    },
+                    {
+                        "comment": "Requesting Role",
+                        "author": {
+                            "identityID": "69d56c7ef2d54ad88bd172ba0c74f1f6",
+                            "name": "SailPoint Services"
+                        },
+                        "createdDate": "2026-09-28T10:36:33.155282Z"
+                    }
+                ],
+                "approvalId": null,
+                "removeDate": "2026-12-11T08:45Z",
+                "startDate": null,
+                "timeoutConfig": null,
+                "approvalCriteria": {
+                    "type": "SERIAL",
+                    "rejection": {
+                        "calculationType": "PERCENT",
+                        "value": 100
+                    },
+                    "approval": {
+                        "calculationType": "COUNT",
+                        "value": 1
+                    }
+                },
+                "forwarded": true,
+                "forwardHistory": [
+                    {
+                        "oldApproverName": "Nilakantha Padhy",
+                        "newApproverName": "SailPoint Services",
+                        "comment": null,
+                        "modified": "2026-09-28T10:37:01.979211Z",
+                        "forwarderName": "SailPoint Services",
+                        "reassignmentType": "MANUAL_REASSIGNMENT"
+                    }
+                ],
+                "originalOwner": {
+                    "type": "WORKFLOW",
+                    "id": "7d1f9296-3c49-4479-9b3e-e39a34d44c14",
+                    "name": "POC Adaptive Approval of Access Request"
+                },
+                "currentOwner": {
+                    "type": "GOVERNANCE_GROUP",
+                    "id": "038bfbab-5415-4bc1-bc01-1489cff2fbc2",
+                    "name": "WG-L1-BR-02849"
+                },
+                "currentOwners": [
+                    {
+                        "type": "GOVERNANCE_GROUP",
+                        "id": "038bfbab-5415-4bc1-bc01-1489cff2fbc2",
+                        "name": "WG-L1-BR-02849",
+                        "serialOrder": 1,
+                        "members": []
+                    }
+                ],
+                "modified": "2026-09-28T10:37:02.024292Z",
+                "status": "APPROVED",
+                "reviewedBy": {
+                    "type": "IDENTITY",
+                    "id": "69d56c7ef2d54ad88bd172ba0c74f1f6",
+                    "name": "SailPoint Services"
+                },
+                "reviewedByIdentities": [
+                    {
+                        "type": "GOVERNANCE_GROUP",
+                        "id": "038bfbab-5415-4bc1-bc01-1489cff2fbc2",
+                        "name": "WG-L1-BR-02849",
+                        "decision": "APPROVED",
+                        "members": [
+                            {
+                                "type": "IDENTITY",
+                                "id": "69d56c7ef2d54ad88bd172ba0c74f1f6",
+                                "name": "SailPoint Services"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "scheme": "WORKFLOW",
+                "errorMessages": null,
+                "comment": null,
+                "approverComments": null,
+                "approvalId": null,
+                "removeDate": "2026-12-11T08:45Z",
+                "startDate": null,
+                "timeoutConfig": null,
+                "approvalCriteria": {
+                    "type": "SERIAL",
+                    "rejection": {
+                        "calculationType": "PERCENT",
+                        "value": 100
+                    },
+                    "approval": {
+                        "calculationType": "COUNT",
+                        "value": 1
+                    }
+                },
+                "forwarded": false,
+                "forwardHistory": null,
+                "originalOwner": {
+                    "type": "WORKFLOW",
+                    "id": "7d1f9296-3c49-4479-9b3e-e39a34d44c14",
+                    "name": "POC Adaptive Approval of Access Request"
+                },
+                "currentOwner": {
+                    "type": "GOVERNANCE_GROUP",
+                    "id": "5612c5d7-9480-428b-8279-01357bbb26e5",
+                    "name": "WG_OSE_Leads"
+                },
+                "currentOwners": [
+                    {
+                        "type": "GOVERNANCE_GROUP",
+                        "id": "5612c5d7-9480-428b-8279-01357bbb26e5",
+                        "name": "WG_OSE_Leads",
+                        "serialOrder": 1,
+                        "members": []
+                    }
+                ],
+                "modified": "2026-09-28T10:42:02.771276Z",
+                "status": "PENDING",
+                "reviewedBy": {
+                    "type": "WORKFLOW",
+                    "id": "7d1f9296-3c49-4479-9b3e-e39a34d44c14",
+                    "name": "POC Adaptive Approval of Access Request"
+                },
+                "reviewedByIdentities": []
+            }
+        ],
+        "approvalIds": [
+            "ad5d2297b53a44268ddeb2f615a984ad",
+            "59ebf278c0b84a1b8129af441a553a60",
+            "2fd70862e4d644d187bd6046c3384323",
+            "4e52a2282bc54f30ad6bdcbb67368dc8",
+            "b0b36635867e42f9a9fe35170ae6dd5f",
+            "94352a6cafd244dbbd42801bfa366681",
+            "75bf3e3f438a49278796fcb632632039",
+            "6ee2702f8a6341aab719d971e0a5027d",
+            "29b34477d0334de8b814f43ca51c72f0",
+            "6f233cfb9ad04161a3d1c9990ca03a5d",
+            "e1e1e66964514323ba16c3e71b25fe48",
+            "c2158370df2a439894bee33734717075",
+            "ece1d9bee16f4d39ada321f7c5d00185"
+        ],
+        "manualWorkItemDetails": null,
+        "accessRequestPhases": [
+            {
+                "started": "2026-09-28T10:34:51.066531228Z",
+                "finished": "2026-09-28T10:34:51.118535705Z",
+                "name": "SOD_PHASE",
+                "result": null,
+                "state": "COMPLETED",
+                "phaseReference": "sodViolationContext"
+            },
+            {
+                "started": "2026-09-28T10:34:51.189976673Z",
+                "finished": "2026-09-28T10:36:29.841674039Z",
+                "name": "PRE_APPROVAL_PHASE",
+                "result": null,
+                "state": "COMPLETED",
+                "phaseReference": "preApprovalTriggerDetails"
+            },
+            {
+                "started": "2026-09-28T10:36:30.198000541Z",
+                "finished": null,
+                "name": "APPROVAL_PHASE",
+                "result": null,
+                "state": "EXECUTING",
+                "phaseReference": "approvalDetails"
+            }
+        ],
+        "accountActivityItemId": "f734e39293ad4b83aa20082925b4018f",
+        "requestType": "GRANT_ACCESS",
+        "modified": "2026-09-28T10:42:03.652Z",
+        "created": "2026-09-28T10:34:50.768Z",
+        "requester": {
+            "type": "IDENTITY",
+            "id": "69d56c7ef2d54ad88bd172ba0c74f1f6",
+            "name": "SailPoint Services"
+        },
+        "requestedFor": {
+            "type": "IDENTITY",
+            "id": "80db01bbc362477098a92bf418ec6b14",
+            "name": "20000213163213"
+        },
+        "requesterComment": {
+            "comment": "Requesting Role",
+            "author": {
+                "type": "IDENTITY",
+                "id": "69d56c7ef2d54ad88bd172ba0c74f1f6",
+                "name": "SailPoint Services"
+            },
+            "created": "2026-09-28T10:34:50.768Z"
+        },
+        "sodViolationContext": null,
+        "accessRequestPolicyCheckDetails": null,
+        "provisioningDetails": null,
+        "preApprovalTriggerDetails": {
+            "comment": "Update SNOW for Access Request Status",
+            "decision": "APPROVED",
+            "reviewer": "workflow.service",
+            "date": "2026-09-28T10:36:29.751Z"
+        },
+        "description": null,
+        "removeDate": "2026-12-11T08:45Z",
+        "startDate": "2026-09-30T20:40Z",
+        "cancelable": true,
+        "accessRequestId": "683b3d79e4284bfdb61e9c450b7de247",
+        "clientMetadata": {
+            "MARID": "234565789227",
+            "BusinessRoleKey": "BR_Hanuma",
+            "startDate": "2026-09-30T20:30:00Z"
+        },
+        "form": null,
+        "identityType": "HUMAN",
+        "accessRequestContext": {
+            "contextAttributes": [
+                {
+                    "attribute": "dimensiondataselection",
+                    "value": "DM_01",
+                    "derived": false
+                }
+            ]
+        },
+        "requestedAccounts": null,
+        "privilegeLevel": null,
+        "jitDetails": null,
+        "privileged": null
+    }
+]
+
