@@ -1,0 +1,32 @@
+The task takes Department, Location, and Job Title as inputs and searches for identities matching any of these attributes. The matching identity names are displayed in the Task Result.
+import sailpoint.object.Identity;
+  import sailpoint.object.QueryOptions;
+  import sailpoint.tools.Message;
+  import java.util.Iterator;
+
+  String department = (String) config.get("Department");
+  String location = (String) config.get("Location");
+  String jobTitle = (String) config.get("JobTitle");
+
+  QueryOptions qo = new QueryOptions();
+
+  Iterator it = context.search(Identity.class, qo);
+
+  while (it.hasNext()) {
+
+    Identity identity = (Identity) it.next();
+
+    String idDepartment = (String) identity.getAttribute("Department");
+
+    String idLocation = (String) identity.getAttribute("location");
+
+    String idJobTitle = (String) identity.getAttribute("JobTitle");
+
+
+    if ((department != null &amp;&amp; department.equals(idDepartment)) ||(location != null &amp;&amp; location.equals(idLocation)) ||(jobTitle != null &amp;&amp; jobTitle.equals(idJobTitle))) {
+
+      taskResult.addMessage(new Message( Message.Type.Info,identity.getName(), null) );
+    }
+  }
+
+  return "Success";
